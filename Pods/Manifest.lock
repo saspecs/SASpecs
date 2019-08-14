@@ -1,0 +1,24 @@
+PODS:
+  - SnapKit (4.2.0)
+  - Then (2.5.0)
+  - Toast (4.0.0)
+
+DEPENDENCIES:
+  - SnapKit
+  - Then
+  - Toast
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - SnapKit
+    - Then
+    - Toast
+
+SPEC CHECKSUMS:
+  SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
+  Then: 0157115e883545c77967b452fe74a1d25fb796e1
+  Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
+
+PODFILE CHECKSUM: 741e4dd15e20cf5cf308f5919385cc2de70f2a32
+
+COCOAPODS: 1.7.5
