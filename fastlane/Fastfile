@@ -1,0 +1,35 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:ios)
+
+platform :ios do
+  desc "Submit a new adhoc version to fir"
+  lane :adhoc_to_firim do |option|
+    # 如果用 pod install
+    cocoapods
+    gym(scheme: "SASpecs",
+	workspace: "SASpecs.xcworkspace",
+	include_bitcode: true,
+	configuration: "Release",
+	export_method: "ad-hoc",
+	output_directory: "~/firim/ipa/#{Time.now.strftime('%Y-%m-%d')}",
+	output_name: "SASpecsPackages #{Time.now.strftime("%H:%M:%S")}",
+	silent: false,
+	include_symbols: true)
+     #上传ipa至fir.im服务器
+     firim(firim_api_token: "8d7ff3b71a85c0bb303cf9a870898575", app_changelog: "超级签名测试包通过fastlane自动打包上传至fir测试第八版")
+  end
+end

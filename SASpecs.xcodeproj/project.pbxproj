@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,6 +12,17 @@
 		A96160C122F2C88F009FFC11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A96160C022F2C88F009FFC11 /* Assets.xcassets */; };
 		A96160CF22F2C88F009FFC11 /* SASpecsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96160CE22F2C88F009FFC11 /* SASpecsTests.swift */; };
 		A96160DA22F2C88F009FFC11 /* SASpecsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96160D922F2C88F009FFC11 /* SASpecsUITests.swift */; };
+		A9899671231D19F7008262E7 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9899670231D19F7008262E7 /* LaunchViewController.swift */; };
+		A9899673231D1AF7008262E7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9899672231D1AF7008262E7 /* HomeViewController.swift */; };
+		A9B8E62723320A000057B7AC /* SATabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B8E62623320A000057B7AC /* SATabBarController.swift */; };
+		A9B8E62B23320AC90057B7AC /* SATabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B8E62A23320AC90057B7AC /* SATabBar.swift */; };
+		A9B8E62E23320B420057B7AC /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B8E62D23320B420057B7AC /* UIColor+Extension.swift */; };
+		A9B8E63023320BC60057B7AC /* SANavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B8E62F23320BC60057B7AC /* SANavigationController.swift */; };
+		A9B8E63323320C100057B7AC /* BasicTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B8E63223320C100057B7AC /* BasicTool.swift */; };
+		A9B8E63823320F950057B7AC /* MineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B8E63723320F950057B7AC /* MineViewController.swift */; };
+		A9B8E63A233210AD0057B7AC /* ConstantTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B8E639233210AD0057B7AC /* ConstantTool.swift */; };
+		A9B8E63C233230310057B7AC /* SAWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B8E63B233230310057B7AC /* SAWebViewController.swift */; };
+		A9B8E63E233240D30057B7AC /* NormalWebController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B8E63D233240D30057B7AC /* NormalWebController.swift */; };
 		D776D4FB563D3268A1C561C0 /* Pods_SASpecs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8977E4A31487193EDC44A516 /* Pods_SASpecs.framework */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +58,17 @@
 		A96160D522F2C88F009FFC11 /* SASpecsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SASpecsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A96160D922F2C88F009FFC11 /* SASpecsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SASpecsUITests.swift; sourceTree = "<group>"; };
 		A96160DB22F2C88F009FFC11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A9899670231D19F7008262E7 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
+		A9899672231D1AF7008262E7 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		A9B8E62623320A000057B7AC /* SATabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SATabBarController.swift; sourceTree = "<group>"; };
+		A9B8E62A23320AC90057B7AC /* SATabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SATabBar.swift; sourceTree = "<group>"; };
+		A9B8E62D23320B420057B7AC /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		A9B8E62F23320BC60057B7AC /* SANavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SANavigationController.swift; sourceTree = "<group>"; };
+		A9B8E63223320C100057B7AC /* BasicTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicTool.swift; sourceTree = "<group>"; };
+		A9B8E63723320F950057B7AC /* MineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineViewController.swift; sourceTree = "<group>"; };
+		A9B8E639233210AD0057B7AC /* ConstantTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantTool.swift; sourceTree = "<group>"; };
+		A9B8E63B233230310057B7AC /* SAWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SAWebViewController.swift; sourceTree = "<group>"; };
+		A9B8E63D233240D30057B7AC /* NormalWebController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalWebController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,7 +111,6 @@
 				6ACA07AB65511A70F89BFC15 /* Pods-SASpecs.debug.xcconfig */,
 				4822DF9814F48AF0BCFC539D /* Pods-SASpecs.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -118,6 +139,10 @@
 		A96160B822F2C88D009FFC11 /* SASpecs */ = {
 			isa = PBXGroup;
 			children = (
+				A9B8E63423320F650057B7AC /* Class */,
+				A9B8E63123320BEE0057B7AC /* Tool */,
+				A9B8E62C23320B2D0057B7AC /* Extension */,
+				A9B8E625233209C40057B7AC /* Main */,
 				A96160B922F2C88D009FFC11 /* AppDelegate.swift */,
 				A96160BB22F2C88D009FFC11 /* ViewController.swift */,
 				A96160C022F2C88F009FFC11 /* Assets.xcassets */,
@@ -142,6 +167,77 @@
 				A96160DB22F2C88F009FFC11 /* Info.plist */,
 			);
 			path = SASpecsUITests;
+			sourceTree = "<group>";
+		};
+		A9B8E625233209C40057B7AC /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				A9B8E62923320AA60057B7AC /* View */,
+				A9B8E62823320A9C0057B7AC /* Controller */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		A9B8E62823320A9C0057B7AC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A9899670231D19F7008262E7 /* LaunchViewController.swift */,
+				A9B8E62623320A000057B7AC /* SATabBarController.swift */,
+				A9B8E62F23320BC60057B7AC /* SANavigationController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A9B8E62923320AA60057B7AC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A9B8E62A23320AC90057B7AC /* SATabBar.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A9B8E62C23320B2D0057B7AC /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				A9B8E62D23320B420057B7AC /* UIColor+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		A9B8E63123320BEE0057B7AC /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				A9B8E63223320C100057B7AC /* BasicTool.swift */,
+				A9B8E639233210AD0057B7AC /* ConstantTool.swift */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		A9B8E63423320F650057B7AC /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				A9B8E63623320F780057B7AC /* Mine */,
+				A9B8E63523320F6F0057B7AC /* Home */,
+			);
+			path = Class;
+			sourceTree = "<group>";
+		};
+		A9B8E63523320F6F0057B7AC /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				A9899672231D1AF7008262E7 /* HomeViewController.swift */,
+				A9B8E63B233230310057B7AC /* SAWebViewController.swift */,
+				A9B8E63D233240D30057B7AC /* NormalWebController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		A9B8E63623320F780057B7AC /* Mine */ = {
+			isa = PBXGroup;
+			children = (
+				A9B8E63723320F950057B7AC /* MineViewController.swift */,
+			);
+			path = Mine;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -317,8 +413,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9B8E63E233240D30057B7AC /* NormalWebController.swift in Sources */,
+				A9B8E62E23320B420057B7AC /* UIColor+Extension.swift in Sources */,
+				A9B8E63C233230310057B7AC /* SAWebViewController.swift in Sources */,
 				A96160BC22F2C88D009FFC11 /* ViewController.swift in Sources */,
+				A9B8E62B23320AC90057B7AC /* SATabBar.swift in Sources */,
+				A9899671231D19F7008262E7 /* LaunchViewController.swift in Sources */,
+				A9B8E63323320C100057B7AC /* BasicTool.swift in Sources */,
+				A9B8E62723320A000057B7AC /* SATabBarController.swift in Sources */,
 				A96160BA22F2C88D009FFC11 /* AppDelegate.swift in Sources */,
+				A9899673231D1AF7008262E7 /* HomeViewController.swift in Sources */,
+				A9B8E63023320BC60057B7AC /* SANavigationController.swift in Sources */,
+				A9B8E63A233210AD0057B7AC /* ConstantTool.swift in Sources */,
+				A9B8E63823320F950057B7AC /* MineViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -475,15 +582,17 @@
 			baseConfigurationReference = 6ACA07AB65511A70F89BFC15 /* Pods-SASpecs.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9GZV2B3UE4;
+				DEVELOPMENT_TEAM = GZ5C32U7U5;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = SASpecs/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.smalla.SASpecs;
+				PRODUCT_BUNDLE_IDENTIFIER = com.super.signature;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -495,15 +604,17 @@
 			baseConfigurationReference = 4822DF9814F48AF0BCFC539D /* Pods-SASpecs.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9GZV2B3UE4;
+				DEVELOPMENT_TEAM = GZ5C32U7U5;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = SASpecs/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.smalla.SASpecs;
+				PRODUCT_BUNDLE_IDENTIFIER = com.super.signature;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
