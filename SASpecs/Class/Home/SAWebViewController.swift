@@ -45,36 +45,46 @@ class SAWebViewController: ViewController {
 }
 
 extension SAWebViewController: WKNavigationDelegate {
-    // 允许或取消导航
+    
+    // 页面开始加载时调用，与UIWebView的代理：shouldStartLoadWith request对应 第一步
+    func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {        debugPrintOnly("didStartProvisionalNavigation navigation ======")
+    }
+    
+    //  页面加载失败时调用，与UIWebView的代理：didFailLoadWithError error对应 第三步
+    func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
+        debugPrintOnly("didFailProvisionalNavigation navigation ======")
+    }
+    
+    // 当内容开始返回时调用，与UIWebView的代理：webViewDidStartLoad对应
+    func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
+        debugPrintOnly("didCommit navigation ======")
+    }
+    
+    // 页面加载完成之后调用，与UIWebView的代理：webViewDidFinishLoad对应  第二步
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        debugPrintOnly("didFinish navigation ======")
+    }
+    
+    // 提交发生错误时调用，与UIWebView的代理：didFailLoadWithError error对应  第三步
+    func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
+        debugPrintOnly("didFail navigation ======")
+    }
+    
+    // 接收到服务器跳转请求即服务器重定向时之后调用
+    func webView(_ webView: WKWebView, didReceiveServerRedirectForProvisionalNavigation navigation: WKNavigation!) {
+        debugPrintOnly("didReceiveServerRedirectForProvisionalNavigation navigation ======")
+    }
+    
+    // 根据WebView对于即将跳转的HTTP请求头信息和相关信息来决定是否跳转
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
         decisionHandler(.allow)
         debugPrintOnly("decidePolicyFor navigationAction ======")
     }
-    // 拿到response之后再次询问允许或取消导航
+    
+    // 根据客户端受到的服务器响应头以及response相关信息来决定是否可以跳转
     func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse, decisionHandler: @escaping (WKNavigationResponsePolicy) -> Void) {
         decisionHandler(.allow)
         debugPrintOnly("decidePolicyFor navigationResponse ======")
     }
-    // 主框架导航开始时调用
-    func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {        debugPrintOnly("didStartProvisionalNavigation navigation ======")
-    }
-    // 内容开始到达主框架时调用
-    func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
-        debugPrintOnly("didCommit navigation ======")
-    }
 
-    // 加载完成时调用
-    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        debugPrintOnly("didFinish navigation ======")
-    }
-
-    // 加载失败时调用
-    func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
-        debugPrintOnly("didFail navigation ======")
-    }
-
-    //  主框架导航开始加载时，如果发生错误时调用
-    func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
-        debugPrintOnly("didFailProvisionalNavigation navigation ======")
-    }
 }
