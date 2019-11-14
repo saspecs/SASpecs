@@ -50,7 +50,7 @@ extension NormalWebController: UIWebViewDelegate {
     
     // 页面加载完成时调用
     func webViewDidFinishLoad(_ webView: UIWebView) {
-        
+        title = webView.stringByEvaluatingJavaScript(from: "document.title")
     }
     
     // 页面加载失败调用

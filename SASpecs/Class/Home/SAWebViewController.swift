@@ -13,20 +13,30 @@ class SAWebViewController: ViewController {
 
     weak var WKWeb: WKWebView!
     
+    let HTML = try! String(contentsOfFile: Bundle.main.path(forResource: "index", ofType: "html")!, encoding: String.Encoding.utf8)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         title = "WKWebView网页测试"
         view.backgroundColor = UIColor.lightGray
         
-        WKWeb = WKWebView(frame: view.bounds).then({ (v) in
+        let configuration = WKWebViewConfiguration()
+        configuration.userContentController = WKUserContentController()
+        configuration.userContentController.add(self, name: "qsqapi")
+        
+        WKWeb = WKWebView(frame: view.bounds, configuration: configuration).then({ (v) in
             view.addSubview(v)
+            v.scrollView.bounces = true
+            v.scrollView.alwaysBounceVertical = true
             v.navigationDelegate = self
-            if let url = URL(string: "https://www.qianniuniu.com") {
-                var req = URLRequest(url: url)
-                req.cachePolicy = .reloadIgnoringLocalAndRemoteCacheData
-                v.load(req)
-            }
+            v.loadHTMLString(HTML, baseURL: nil)
+            v.allowsBackForwardNavigationGestures = true
+//            if let url = URL(string: "https://www.qianniuniu.com") {
+//                var req = URLRequest(url: url)
+//                req.cachePolicy = .reloadIgnoringLocalAndRemoteCacheData
+//                v.load(req)
+//            }
             v.snp.makeConstraints({ (make) in
                 if BasicTool.isIPhoneXSeries {
                     make.top.equalTo(BasicTool.iphoneXSafeAreaInsets().top + NavigationBarDefaultHeight)
@@ -36,11 +46,6 @@ class SAWebViewController: ViewController {
                 make.bottom.left.right.equalTo(self.view)
             })
         })
-        
-        WKWeb.evaluateJavaScript("document.title") { (title, error) in
-            let titleStr = title as? String ?? ""
-            self.title = titleStr
-        }
     }
 }
 
@@ -63,6 +68,14 @@ extension SAWebViewController: WKNavigationDelegate {
     // 页面加载完成之后调用，与UIWebView的代理：webViewDidFinishLoad对应  第二步
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         debugPrintOnly("didFinish navigation ======")
+        WKWeb.evaluateJavaScript("document.title") { (title, error) in
+            let titleStr = title as? String ?? ""
+            self.title = titleStr
+        }
+        
+        webView.evaluateJavaScript("sayHello('WebView你好！')") { (result, err) in
+            print(result, err)
+        }
     }
     
     // 提交发生错误时调用，与UIWebView的代理：didFailLoadWithError error对应  第三步
@@ -87,4 +100,11 @@ extension SAWebViewController: WKNavigationDelegate {
         debugPrintOnly("decidePolicyFor navigationResponse ======")
     }
 
+}
+
+extension SAWebViewController: WKScriptMessageHandler {
+    
+    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
+        debugPrintOnly(message.body)
+    }
 }

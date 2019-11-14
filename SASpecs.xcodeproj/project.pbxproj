@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A62A5B202341EDE60003D3CA /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = A62A5B1F2341EDE60003D3CA /* index.html */; };
+		A62A5B252341F3E30003D3CA /* BaseWKConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62A5B242341F3E30003D3CA /* BaseWKConfiguration.swift */; };
+		A62A5B272341F4460003D3CA /* BaseWKUCController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62A5B262341F4460003D3CA /* BaseWKUCController.swift */; };
+		A62A5B292341F47B0003D3CA /* BaseWKWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62A5B282341F47B0003D3CA /* BaseWKWebView.swift */; };
+		A63513812363036B004F5893 /* BaseWKScriptMessageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63513802363036B004F5893 /* BaseWKScriptMessageHandler.swift */; };
 		A96160BA22F2C88D009FFC11 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96160B922F2C88D009FFC11 /* AppDelegate.swift */; };
 		A96160BC22F2C88D009FFC11 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96160BB22F2C88D009FFC11 /* ViewController.swift */; };
 		A96160C122F2C88F009FFC11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A96160C022F2C88F009FFC11 /* Assets.xcassets */; };
@@ -47,6 +52,11 @@
 		4822DF9814F48AF0BCFC539D /* Pods-SASpecs.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SASpecs.release.xcconfig"; path = "Target Support Files/Pods-SASpecs/Pods-SASpecs.release.xcconfig"; sourceTree = "<group>"; };
 		6ACA07AB65511A70F89BFC15 /* Pods-SASpecs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SASpecs.debug.xcconfig"; path = "Target Support Files/Pods-SASpecs/Pods-SASpecs.debug.xcconfig"; sourceTree = "<group>"; };
 		8977E4A31487193EDC44A516 /* Pods_SASpecs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SASpecs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A62A5B1F2341EDE60003D3CA /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
+		A62A5B242341F3E30003D3CA /* BaseWKConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseWKConfiguration.swift; sourceTree = "<group>"; };
+		A62A5B262341F4460003D3CA /* BaseWKUCController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseWKUCController.swift; sourceTree = "<group>"; };
+		A62A5B282341F47B0003D3CA /* BaseWKWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseWKWebView.swift; sourceTree = "<group>"; };
+		A63513802363036B004F5893 /* BaseWKScriptMessageHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseWKScriptMessageHandler.swift; sourceTree = "<group>"; };
 		A96160B622F2C88D009FFC11 /* SASpecs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SASpecs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A96160B922F2C88D009FFC11 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A96160BB22F2C88D009FFC11 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -114,6 +124,17 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		A62A5B212341F2640003D3CA /* WKWebView */ = {
+			isa = PBXGroup;
+			children = (
+				A62A5B282341F47B0003D3CA /* BaseWKWebView.swift */,
+				A62A5B242341F3E30003D3CA /* BaseWKConfiguration.swift */,
+				A62A5B262341F4460003D3CA /* BaseWKUCController.swift */,
+				A63513802363036B004F5893 /* BaseWKScriptMessageHandler.swift */,
+			);
+			path = WKWebView;
+			sourceTree = "<group>";
+		};
 		A96160AD22F2C88D009FFC11 = {
 			isa = PBXGroup;
 			children = (
@@ -147,6 +168,7 @@
 				A96160BB22F2C88D009FFC11 /* ViewController.swift */,
 				A96160C022F2C88F009FFC11 /* Assets.xcassets */,
 				A96160C522F2C88F009FFC11 /* Info.plist */,
+				A62A5B1F2341EDE60003D3CA /* index.html */,
 			);
 			path = SASpecs;
 			sourceTree = "<group>";
@@ -216,6 +238,7 @@
 		A9B8E63423320F650057B7AC /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				A62A5B212341F2640003D3CA /* WKWebView */,
 				A9B8E63623320F780057B7AC /* Mine */,
 				A9B8E63523320F6F0057B7AC /* Home */,
 			);
@@ -347,6 +370,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A96160C122F2C88F009FFC11 /* Assets.xcassets in Resources */,
+				A62A5B202341EDE60003D3CA /* index.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,16 +437,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A62A5B252341F3E30003D3CA /* BaseWKConfiguration.swift in Sources */,
 				A9B8E63E233240D30057B7AC /* NormalWebController.swift in Sources */,
 				A9B8E62E23320B420057B7AC /* UIColor+Extension.swift in Sources */,
 				A9B8E63C233230310057B7AC /* SAWebViewController.swift in Sources */,
 				A96160BC22F2C88D009FFC11 /* ViewController.swift in Sources */,
 				A9B8E62B23320AC90057B7AC /* SATabBar.swift in Sources */,
+				A62A5B292341F47B0003D3CA /* BaseWKWebView.swift in Sources */,
 				A9899671231D19F7008262E7 /* LaunchViewController.swift in Sources */,
+				A63513812363036B004F5893 /* BaseWKScriptMessageHandler.swift in Sources */,
 				A9B8E63323320C100057B7AC /* BasicTool.swift in Sources */,
 				A9B8E62723320A000057B7AC /* SATabBarController.swift in Sources */,
 				A96160BA22F2C88D009FFC11 /* AppDelegate.swift in Sources */,
 				A9899673231D1AF7008262E7 /* HomeViewController.swift in Sources */,
+				A62A5B272341F4460003D3CA /* BaseWKUCController.swift in Sources */,
 				A9B8E63023320BC60057B7AC /* SANavigationController.swift in Sources */,
 				A9B8E63A233210AD0057B7AC /* ConstantTool.swift in Sources */,
 				A9B8E63823320F950057B7AC /* MineViewController.swift in Sources */,
