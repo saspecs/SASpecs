@@ -46,6 +46,9 @@ internal let SharedAppDelegate = UIApplication.shared.delegate
 /// Main Window
 public let AppMainWindow = UIApplication.shared.delegate?.window
 
+/// 历史keyWindow的替代者 UIApplication.shared.keyWindow
+public let firstWindow = UIApplication.shared.windows.first
+
 /// Root View Controller
 public let RootViewController = UIApplication.shared.delegate?.window??.rootViewController
 

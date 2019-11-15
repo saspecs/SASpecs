@@ -12,8 +12,6 @@ import UIKit
 protocol FloatDelegate {
     // 按钮单点
     func singleClick()
-    // 按钮连续点击
-    func repeatClick()
 }
 
 // 悬浮按钮
@@ -25,20 +23,14 @@ class FloatButton: UIButton {
     // 拖拽后是否自动移到边缘
     var isAbsortEnable: Bool = true
     
-    // 背景颜色
-    var bgColor: UIColor? = UIColor.red
-    
     // 正常情况下 透明度
     var alphaOfNormol: CGFloat = 0.2
     
     // 拖拽时的透明度
-    var alphaOfDrag: CGFloat = 0.8
-    
-    // 圆角大小
-    var radiuOfButton: CGFloat = 12
+    var alphaOfDrag: CGFloat = 1.0
     
     // 拖拽结束后的等待时间
-    var timeOfWait: CGFloat = 1.5
+    var timeOfWait: CGFloat = 1
     
     // 拖拽结束后的过渡动画时间
     var timeOfAnimation: CGFloat = 0.3
@@ -58,13 +50,29 @@ class FloatButton: UIButton {
     // 内部使用
     fileprivate var isHasMove: Bool = false
     
-    fileprivate var isFirstClick: Bool = true
+    // 拖拽取消点击事件
+//    fileprivate var isFirstClick: Bool = true
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    convenience init(_ alphaOfNormol: CGFloat = 0.2,
+                     bgColor: UIColor? = UIColor.red,
+                     radiuOfButton: CGFloat = 12,
+                     titleOfButton: String = "",
+                     titleColorOfButton: UIColor? = UIColor.white) {
+        self.init()
+        
         alpha = alphaOfNormol
         backgroundColor = bgColor
         layer.cornerRadius = radiuOfButton
+        setTitle(titleOfButton, for: .normal)
+        
+        self.alphaOfNormol = alphaOfNormol
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(singleClick))
+        addGestureRecognizer(tapGesture)
     }
     
     required init?(coder: NSCoder) {
@@ -80,19 +88,20 @@ class FloatButton: UIButton {
             return
         }
         self.allPoint = touches.first?.location(in: self)
-        if touches.first?.tapCount == 1  {
-            self.perform(#selector(singleClick), with: nil, afterDelay: 0.2)
-        } else if touches.first?.tapCount == 2 {
-            self.perform(#selector(repeatClick))
-        }
+//        if touches.first?.tapCount == 1  {
+//            self.perform(#selector(singleClick), with: nil, afterDelay: 0.2)
+//        } else if touches.first?.tapCount == 2 {
+//            self.perform(#selector(repeatClick))
+//        }
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.isHasMove = true
-        if self.isFirstClick {
-            NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(singleClick), object: nil)
-            self.isFirstClick = false
-        }
+//        if self.isFirstClick {
+//            // 拖拽滑动过程中取消单次点击事件
+//            NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(singleClick), object: nil)
+//            self.isFirstClick = false
+//        }
         if !isDragEnable {
             return
         }
@@ -104,7 +113,7 @@ class FloatButton: UIButton {
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.isFirstClick = true
+//        self.isFirstClick = true
         if #available(iOS 10.0, *) {
             self.timer = Timer.init(timeInterval: TimeInterval(self.timeOfWait), repeats: false, block: { (Timer) in
                 // 过渡
@@ -146,7 +155,7 @@ class FloatButton: UIButton {
                     }
                     let y = tempy + self.frame.height
                     self.frame = CGRect.init(x: x, y: y, width: self.frame.width, height: self.frame.height)
-                } else if marginL > ((superFrame?.width)! / 2) {
+                } else if marginL > ((superFrame?.width)! / 2 - self.frame.width / 2) {
                     // 靠右移动
                     self.frame = CGRect.init(x: xOfR, y: marginT, width: self.frame.width, height: self.frame.height)
                 } else {
@@ -166,10 +175,10 @@ class FloatButton: UIButton {
         delegate?.singleClick()
     }
     
-    @objc func repeatClick() {
-        NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(singleClick), object: nil)
-        delegate?.repeatClick()
-    }
+//    @objc func repeatClick() {
+//        NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(singleClick), object: nil)
+//        delegate?.repeatClick()
+//    }
     
     @objc func timeAction() {
         UIView.animate(withDuration: TimeInterval(self.timeOfAnimation), animations: {

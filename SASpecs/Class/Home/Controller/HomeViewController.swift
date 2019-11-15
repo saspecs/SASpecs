@@ -22,6 +22,7 @@ class HomeViewController: ViewController {
             t.delegate = self
             t.dataSource = self
             t.rowHeight = 50
+            t.showsVerticalScrollIndicator = false
             t.snp.makeConstraints({ (make) in
                 make.left.right.top.bottom.equalTo(view)
             })
@@ -58,6 +59,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         debugPrintOnly("点击第\(indexPath.row)行成功！！！")
         switch indexPath.row {
         case 0:
@@ -74,3 +76,4 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
 }
+
