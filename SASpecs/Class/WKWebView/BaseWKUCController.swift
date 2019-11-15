@@ -18,18 +18,12 @@ class BaseWKUCController: WKUserContentController {
         super.init()
         
         // 成对出现
-        self.add(self, name: "")
-        self.removeScriptMessageHandler(forName: "")
+//        self.add(self, name: "")
+//        self.removeScriptMessageHandler(forName: "")
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-}
-
-extension BaseWKUCController: WKScriptMessageHandler {
-    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-        <#code#>
-    }
 }

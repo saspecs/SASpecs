@@ -66,6 +66,9 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         case 1:
             let normalWebVC = NormalWebController()
             navigationController?.pushViewController(normalWebVC, animated: true)
+        case 2:
+            let buttonVC = ButtonViewController()
+            navigationController?.pushViewController(buttonVC, animated: true)
         default:
             return
         }

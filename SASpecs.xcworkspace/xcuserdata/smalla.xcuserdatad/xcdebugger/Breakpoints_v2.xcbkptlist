@@ -19,40 +19,6 @@
             endingLineNumber = "70"
             landmarkName = "webView(_:didFinish:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "D8FD4020-A4C4-4F67-998A-86C28DBA9DAB - ae8bd2aaeb8d9ecb"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SASpecs.SAWebViewController.webView(_: __C.WKWebView, didFinish: Swift.Optional&lt;__C.WKNavigation&gt;) -&gt; ()"
-                  moduleName = "SASpecs"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/smalla/Desktop/Coding/SASpecs/SASpecs/SASpecs/Class/Home/SAWebViewController.swift"
-                  timestampString = "591523737.856233"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "70"
-                  endingLineNumber = "70"
-                  offsetFromSymbolStart = "361">
-               </Location>
-               <Location
-                  uuid = "D8FD4020-A4C4-4F67-998A-86C28DBA9DAB - 9b1eeb5b2735716a"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Any&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in SASpecs.SAWebViewController.webView(_: __C.WKWebView, didFinish: Swift.Optional&lt;__C.WKNavigation&gt;) -&gt; ()"
-                  moduleName = "SASpecs"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/smalla/Desktop/Coding/SASpecs/SASpecs/SASpecs/Class/Home/SAWebViewController.swift"
-                  timestampString = "591523737.8586"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "71"
-                  endingLineNumber = "71"
-                  offsetFromSymbolStart = "189">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -87,6 +53,38 @@
             endingLineNumber = "76"
             landmarkName = "webView(_:didFinish:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "0EB059FD-E99E-4B45-A8E8-693A53F40F16 - ae8bd2aaeb8d9ecb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SASpecs.SAWebViewController.webView(_: __C.WKWebView, didFinish: Swift.Optional&lt;__C.WKNavigation&gt;) -&gt; ()"
+                  moduleName = "SASpecs"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/smalla/Desktop/Coding/SASpecs/SASpecs/SASpecs/Class/Home/SAWebViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "76"
+                  endingLineNumber = "76"
+                  offsetFromSymbolStart = "845">
+               </Location>
+               <Location
+                  uuid = "0EB059FD-E99E-4B45-A8E8-693A53F40F16 - e3b53d18a27d0769"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Swift.Optional&lt;Any&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in SASpecs.SAWebViewController.webView(_: __C.WKWebView, didFinish: Swift.Optional&lt;__C.WKNavigation&gt;) -&gt; ()"
+                  moduleName = "SASpecs"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/smalla/Desktop/Coding/SASpecs/SASpecs/SASpecs/Class/Home/SAWebViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "77"
+                  endingLineNumber = "77"
+                  offsetFromSymbolStart = "32">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
