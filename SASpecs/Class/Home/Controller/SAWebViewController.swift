@@ -21,9 +21,7 @@ class SAWebViewController: ViewController {
         title = "WKWebView网页测试"
         view.backgroundColor = UIColor.lightGray
         
-        let configuration = WKWebViewConfiguration()
-        configuration.userContentController = WKUserContentController()
-        configuration.userContentController.add(self, name: "qsqapi")
+        let configuration = BaseWKConfiguration(self)
         
         WKWeb = WKWebView(frame: view.bounds, configuration: configuration).then({ (v) in
             view.addSubview(v)
@@ -46,6 +44,16 @@ class SAWebViewController: ViewController {
                 make.bottom.left.right.equalTo(self.view)
             })
         })
+    }
+    
+    deinit {
+        debugPrintOnly("\(self) is deinit ......")
+    }
+}
+
+extension SAWebViewController: WKJSImplementDelegate {
+    func openUrl(_ param: String) {
+        debugPrintOnly("JS调用成功啦！！！参数值为========  \(param)")
     }
 }
 
@@ -100,11 +108,4 @@ extension SAWebViewController: WKNavigationDelegate {
         debugPrintOnly("decidePolicyFor navigationResponse ======")
     }
 
-}
-
-extension SAWebViewController: WKScriptMessageHandler {
-    
-    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-        debugPrintOnly(message.body)
-    }
 }

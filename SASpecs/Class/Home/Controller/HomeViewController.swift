@@ -23,22 +23,35 @@ class HomeViewController: ViewController {
             t.dataSource = self
             t.rowHeight = 50
             t.showsVerticalScrollIndicator = false
+            t.register(HomeTableCell.self, forCellReuseIdentifier: HomeTableCell.identifier)
             t.snp.makeConstraints({ (make) in
                 make.left.right.top.bottom.equalTo(view)
             })
         })
     }
+    
+    func getDetailText(from index: Int) -> String {
+        switch index {
+            case 0:
+                return "WKWebView调试"
+            case 1:
+                return "UIWebView调试"
+            case 2:
+                return "悬浮按钮调试"
+            default:
+                return ""
+        }
+    }
 }
 
-extension ViewController: UITableViewDelegate, UITableViewDataSource {
+extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 10
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.textLabel?.text = "第\(indexPath.row)行"
-        cell.accessoryType = .disclosureIndicator
+        let cell = tableView.dequeueReusableCell(withIdentifier: HomeTableCell.identifier, for: indexPath) as! HomeTableCell
+        cell.loadData("第\(indexPath.row)行", descStr: getDetailText(from: indexPath.row))
         return cell
     }
     

@@ -14,6 +14,14 @@ import WebKit
  */
 class BaseWKConfiguration: WKWebViewConfiguration {
     
+    convenience init(_ delegate: WKJSImplementDelegate) {
+        self.init()
+        
+        let userContentVC = BaseWKUCController()
+        userContentVC.messageHandleDelegate = delegate
+        userContentController = userContentVC
+    }
+    
     override init() {
         super.init()
     }

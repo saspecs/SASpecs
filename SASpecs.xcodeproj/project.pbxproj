@@ -14,6 +14,7 @@
 		A63513812363036B004F5893 /* BaseWKScriptMessageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63513802363036B004F5893 /* BaseWKScriptMessageHandler.swift */; };
 		A63AF79B237E43EC00BCEE2A /* FloatButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63AF79A237E43EC00BCEE2A /* FloatButton.swift */; };
 		A63AF79D237E59ED00BCEE2A /* TimerTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63AF79C237E59ED00BCEE2A /* TimerTool.swift */; };
+		A643554E23823C8B000880B4 /* HomeTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A643554D23823C8B000880B4 /* HomeTableCell.swift */; };
 		A6BAB9E3237D5EDE00B39490 /* ButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BAB9E2237D5EDE00B39490 /* ButtonViewController.swift */; };
 		A96160BA22F2C88D009FFC11 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96160B922F2C88D009FFC11 /* AppDelegate.swift */; };
 		A96160BC22F2C88D009FFC11 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96160BB22F2C88D009FFC11 /* ViewController.swift */; };
@@ -62,6 +63,7 @@
 		A63513802363036B004F5893 /* BaseWKScriptMessageHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseWKScriptMessageHandler.swift; sourceTree = "<group>"; };
 		A63AF79A237E43EC00BCEE2A /* FloatButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatButton.swift; sourceTree = "<group>"; };
 		A63AF79C237E59ED00BCEE2A /* TimerTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerTool.swift; sourceTree = "<group>"; };
+		A643554D23823C8B000880B4 /* HomeTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableCell.swift; sourceTree = "<group>"; };
 		A6BAB9E2237D5EDE00B39490 /* ButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonViewController.swift; sourceTree = "<group>"; };
 		A96160B622F2C88D009FFC11 /* SASpecs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SASpecs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A96160B922F2C88D009FFC11 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				A63AF79A237E43EC00BCEE2A /* FloatButton.swift */,
+				A643554D23823C8B000880B4 /* HomeTableCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -464,6 +467,7 @@
 			files = (
 				A62A5B252341F3E30003D3CA /* BaseWKConfiguration.swift in Sources */,
 				A9B8E63E233240D30057B7AC /* NormalWebController.swift in Sources */,
+				A643554E23823C8B000880B4 /* HomeTableCell.swift in Sources */,
 				A9B8E62E23320B420057B7AC /* UIColor+Extension.swift in Sources */,
 				A9B8E63C233230310057B7AC /* SAWebViewController.swift in Sources */,
 				A96160BC22F2C88D009FFC11 /* ViewController.swift in Sources */,

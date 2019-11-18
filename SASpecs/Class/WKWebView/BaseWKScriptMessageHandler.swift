@@ -18,3 +18,9 @@ enum WKJSToNativeName: String {
 enum WKNativeToJSName: String {
     case cancelAction = "cancelAction"
 }
+
+
+@objc
+protocol WKJSImplementDelegate: NSObjectProtocol {
+   @objc func openUrl(_ param: String)
+}
