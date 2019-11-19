@@ -14,12 +14,15 @@ import WebKit
  */
 class BaseWKConfiguration: WKWebViewConfiguration {
     
-    convenience init(_ delegate: WKJSImplementDelegate) {
+    weak var contentController: BaseWKUCController!
+    
+    convenience init(_ delegate: WKJSImplementDelegate?) {
         self.init()
         
-        let userContentVC = BaseWKUCController()
-        userContentVC.messageHandleDelegate = delegate
-        userContentController = userContentVC
+        contentController = BaseWKUCController().then({ (c) in
+            c.messageHandleDelegate = delegate
+            userContentController = c
+        })
     }
     
     override init() {
@@ -28,5 +31,9 @@ class BaseWKConfiguration: WKWebViewConfiguration {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    deinit {
+        debugPrintOnly("\(self) is deinit ......")
     }
 }

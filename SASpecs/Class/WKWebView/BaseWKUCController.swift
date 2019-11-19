@@ -19,8 +19,10 @@ class BaseWKUCController: WKUserContentController {
     override init() {
         super.init()
         
+        let contentHandleDelegate = WKScriptMessageHandleDelegate()
+        contentHandleDelegate.messageHandleDelegate = self
         // 成对出现
-        add(self, name: WKJSToNativeName.openUrl.rawValue)
+        add(contentHandleDelegate, name: WKJSToNativeName.openUrl.rawValue)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -28,10 +30,8 @@ class BaseWKUCController: WKUserContentController {
     }
     
     deinit {
-        removeScriptMessageHandler(forName: WKJSToNativeName.openUrl.rawValue)
         debugPrintOnly("\(self) is deinit ......")
     }
-    
 }
 
 // 实现代理遵循WKScriptMessageHandler
@@ -40,11 +40,11 @@ extension BaseWKUCController: WKScriptMessageHandler {
         debugPrintOnly(message.name)
         debugPrintOnly(message.body)
         debugPrintOnly(message.frameInfo)
-                
+
         guard let delegate = messageHandleDelegate else {
             return
         }
-        
+
         switch message.name {
             case WKJSToNativeName.openUrl.rawValue:
                 if delegate.responds(to: #selector(delegate.openUrl(_:))) {

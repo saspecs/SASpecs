@@ -24,3 +24,19 @@ enum WKNativeToJSName: String {
 protocol WKJSImplementDelegate: NSObjectProtocol {
    @objc func openUrl(_ param: String)
 }
+
+
+class WKScriptMessageHandleDelegate: NSObject {
+    weak var messageHandleDelegate: WKScriptMessageHandler?
+}
+
+extension WKScriptMessageHandleDelegate: WKScriptMessageHandler {
+    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
+        guard let delegate = messageHandleDelegate else {
+            return
+        }
+        if delegate.responds(to: #selector(userContentController(_:didReceive:))) {
+            delegate.userContentController(userContentController, didReceive: message)
+        }
+    }
+}

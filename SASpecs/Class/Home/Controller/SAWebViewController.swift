@@ -13,6 +13,8 @@ class SAWebViewController: ViewController {
 
     weak var WKWeb: WKWebView!
     
+    lazy var wkConfig: BaseWKConfiguration! = BaseWKConfiguration(self)
+    
     let HTML = try! String(contentsOfFile: Bundle.main.path(forResource: "index", ofType: "html")!, encoding: String.Encoding.utf8)
     
     override func viewDidLoad() {
@@ -20,10 +22,8 @@ class SAWebViewController: ViewController {
         
         title = "WKWebView网页测试"
         view.backgroundColor = UIColor.lightGray
-        
-        let configuration = BaseWKConfiguration(self)
-        
-        WKWeb = WKWebView(frame: view.bounds, configuration: configuration).then({ (v) in
+                
+        WKWeb = WKWebView(frame: view.bounds, configuration: wkConfig).then({ (v) in
             view.addSubview(v)
             v.scrollView.bounces = true
             v.scrollView.alwaysBounceVertical = true
@@ -47,6 +47,9 @@ class SAWebViewController: ViewController {
     }
     
     deinit {
+        if wkConfig != nil, let contentVC = wkConfig.contentController {
+            contentVC.removeScriptMessageHandler(forName: WKJSToNativeName.openUrl.rawValue)
+        }
         debugPrintOnly("\(self) is deinit ......")
     }
 }
