@@ -30,11 +30,11 @@ class SAWebViewController: ViewController {
             v.navigationDelegate = self
             v.loadHTMLString(HTML, baseURL: nil)
             v.allowsBackForwardNavigationGestures = true
-//            if let url = URL(string: "https://www.qianniuniu.com") {
-//                var req = URLRequest(url: url)
-//                req.cachePolicy = .reloadIgnoringLocalAndRemoteCacheData
-//                v.load(req)
-//            }
+            //            if let url = URL(string: "https://www.qianniuniu.com") {
+            //                var req = URLRequest(url: url)
+            //                req.cachePolicy = .reloadIgnoringLocalAndRemoteCacheData
+            //                v.load(req)
+            //            }
             v.snp.makeConstraints({ (make) in
                 if BasicTool.isIPhoneXSeries {
                     make.top.equalTo(BasicTool.iphoneXSafeAreaInsets().top + NavigationBarDefaultHeight)
@@ -81,11 +81,12 @@ extension SAWebViewController: WKNavigationDelegate {
         debugPrintOnly("didFinish navigation ======")
         WKWeb.evaluateJavaScript("document.title") { (title, error) in
             let titleStr = title as? String ?? ""
-            self.title = titleStr
+            self.navigationItem.title = titleStr
+            debugPrint(titleStr)
         }
         
         webView.evaluateJavaScript("sayHello('WebView你好！')") { (result, err) in
-            print(result, err)
+            debugPrint(result)
         }
     }
     

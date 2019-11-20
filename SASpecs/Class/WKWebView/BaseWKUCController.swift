@@ -23,6 +23,13 @@ class BaseWKUCController: WKUserContentController {
         contentHandleDelegate.messageHandleDelegate = self
         // 成对出现
         add(contentHandleDelegate, name: WKJSToNativeName.openUrl.rawValue)
+        
+        //window.openUrl("https://www.qianniuniu.com");
+        //window.webkit.messageHandlers.openUrl.postMessage("https://www.qianniuniu.com");
+        
+        let scriptSource = "setTimeout(function(){window.openUrl=function(str){window.webkit.messageHandlers.openUrl.postMessage(str)};}, 1)"
+        let userScript = WKUserScript(source: scriptSource, injectionTime: .atDocumentStart, forMainFrameOnly: true)
+        addUserScript(userScript)
     }
     
     required init?(coder aDecoder: NSCoder) {
